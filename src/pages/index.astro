@@ -1,5 +1,7 @@
 ---
 import HeroSection from '../components/HeroSection.astro';
+import ProgramsSection from '../components/ProgramsSection.astro';
+import Container from '../components/Container.astro';
 import Navbar from '../layout/Navbar.astro';
 let title = 'Housecats Volleyball Club';
 ---
@@ -18,6 +20,9 @@ let title = 'Housecats Volleyball Club';
 	<Navbar />
 	<main>
 		<HeroSection />
+		<Container paddingSize="x-large">
+			<ProgramsSection />
+		</Container>
 	</main>
 </body>
 </html>
