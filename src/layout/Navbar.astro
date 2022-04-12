@@ -1,0 +1,49 @@
+---
+import Container from "../components/Container.astro"
+import Button from "../components/Button.astro"
+---
+<style>
+  .c-navbar {
+    opacity: 0;
+    padding-top: var(--g-spacing--large);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+    animation: fade-in 1s forwards;
+    animation-delay: 1s;
+  }
+
+  .c-navbar__link-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  .c-navbar__link {
+    color: var(--g-color--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+
+  @keyframes fade-in {
+  0%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+
+<nav class="c-navbar">
+  <Container>
+    <ul class="c-navbar__link-list">
+      <li><a class="c-navbar__link" href="/">HC</a></li>
+      <li><Button variant="secondary" url="https://www.revolutionise.com.au/housecatsvc/registration/">Register</Button></li>
+    </ul>
+  </Container>
+</nav>

@@ -1,0 +1,69 @@
+---
+import cx from "clsx";
+const {url, variant} = Astro.props;
+
+const classes = cx("c-button", {
+  [`c-button--${variant}`]: variant,
+})
+---
+
+<style>
+/* primary */
+.c-button {
+  background-color: var(--g-color--primary);
+  border: none;
+  border-radius: var(--g-border-radius);
+  color: var(--g-color--white);
+  cursor: pointer;
+  font-weight: var(--g-font-weight--bold);
+  font-size: var(--g-font-size--base);
+  outline: none;
+  padding: var(--g-spacing--base) var(--g-spacing--x-large);
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.c-button:hover {
+  background-color: var(--g-color--primary-dark);
+  transition: 0.3s background-color;
+}
+
+.c-button:active {
+  background-color: var(--g-color--primary-darker);
+}
+
+.c-button:focus {
+  outline: var(--g-color--focus) solid var(--g-outline-width);
+}
+
+/* secondary */
+.c-button--secondary {
+  background-color: var(--g-color--secondary-lighter);
+  color: var(--g-color--black);
+}
+
+.c-button--secondary:hover {
+  background-color: var(--g-color--secondary-light);
+}
+
+.c-button--secondary:active {
+  background-color: var(--g-color--secondary-dark);
+}
+
+.c-button--secondary:focus {
+  outline: var(--g-color--focus) solid var(--g-outline-width);
+}
+
+</style>
+{ url ? 
+  (
+    <a class={classes} href={url}>
+      <slot/>
+    </a>
+  ) : 
+  (
+    <button type="button" class={classes}>
+      <slot/>
+    </button>
+  )
+}

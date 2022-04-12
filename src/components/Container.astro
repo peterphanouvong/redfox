@@ -1,0 +1,45 @@
+---
+import cx from "clsx";
+const {size, paddingSize} = Astro.props;
+---
+<style>
+.c-container {
+  margin: auto;
+  max-width: 80rem;
+}
+
+.c-container--small {
+  max-width: 60rem;
+}
+
+.c-container--x-small {
+  max-width: 40rem;
+}
+
+.c-container-padding--small {
+  padding-left: var(--g-spacing--small);
+  padding-right: var(--g-spacing--small);
+}
+
+.c-container-padding--base {
+  padding-left: var(--g-spacing--base);
+  padding-right: var(--g-spacing--base);
+}
+
+.c-container-padding--large {
+  padding-left: var(--g-spacing--large);
+  padding-right: var(--g-spacing--large);
+}
+
+.c-container-padding--x-large {
+  padding-left: var(--g-spacing--x-large);
+  padding-right: var(--g-spacing--x-large);
+}
+</style>
+
+<div class={cx("c-container", {
+  [`c-container--${size}`]: size,
+  [`c-container-padding--${paddingSize}`]: paddingSize,
+})}>
+  <slot />
+</div>

@@ -1,28 +1,74 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-	font-size: 1rem;
-	--user-font-scale: 1rem - 16px;
-	font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
+  /* Colours */
+  --g-color--primary: #fe6f01;
+  --g-color--primary-dark: #cb5801;
+  --g-color--primary-darker: #984201;
+  --g-color--primary-light: #ffd7b8;
+  --g-color--primary-lighter: #fff1e6;
+
+  --g-color--secondary: #a2abb9;
+  --g-color--secondary-dark: #8893a5;
+  --g-color--secondary-darker: #6d7b92;
+  --g-color--secondary-light: #bcc3cd;
+  --g-color--secondary-lighter: #d6dae0;
+
+  --g-color--focus: #73bafd;
+
+  --g-color--white: #fff;
+  --g-color--black: #000;
+
+  /* Fonts */
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 1rem;
+  --user-font-scale: 1rem - 16px;
+
+  --g-font-size--x-small: 0.563rem;
+  --g-font-size--small: 0.75rem;
+  --g-font-size--base: 1rem;
+  --g-font-size--large: 1.333rem;
+  --g-font-size--x-large: 1.777rem;
+  --g-font-size--2x-large: 2.369rem;
+  --g-font-size--3x-large: 3.157rem;
+  --g-font-size--4x-large: 4.209rem;
+  --g-font-size--5x-large: 5.61rem;
+
+  --g-font-weight--base: 400;
+  --g-font-weight--bold: 600;
+
+  /* Spacing */
+  --g-spacing--small: 0.5rem;
+  --g-spacing--base: 1rem;
+  --g-spacing--large: 1.5rem;
+  --g-spacing--x-large: 2rem;
+  --g-spacing--2x-large: 2.5rem;
+  --g-spacing--3x-large: 3rem;
+  --g-spacing--4x-large: 3.5rem;
+  --g-spacing--5x-large: 3.5rem;
+
+  /* Borders */
+  --g-border-radius: 0.3125rem;
+
+  /* Outline */
+  --g-outline-width: 0.1875rem;
 }
 
 body {
-	padding: 4rem 2rem;
-	width: 100%;
-	min-height: 100vh;
-	display: grid;
-	justify-content: center;
-	background: #f9fafb;
-	color: #111827;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  font-size: var(--g-font-size--base);
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background: #111827;
-		color: #fff;
-	}
-}
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background: #111827;
+    color: #fff;
+  }
+} */

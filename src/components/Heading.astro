@@ -1,0 +1,85 @@
+---
+import cx from 'clsx';
+const {text, size, tag, color} = Astro.props;
+
+const Tag = tag;
+---
+<style>
+.c-heading {
+  font-size: var(--g-font-size--small);
+  line-height: 1;
+}
+
+.c-heading--large {
+  font-size: var(--g-font-size--base);
+}
+
+.c-heading--x-large {
+  font-size: var(--g-font-size--large);
+}
+
+.c-heading--2x-large {
+  font-size: var(--g-font-size--x-large);
+}
+
+.c-heading--3x-large {
+  font-size: var(--g-font-size--2x-large);
+}
+
+.c-heading--4x-large {
+  font-size: var(--g-font-size--3x-large);
+}
+
+.c-heading--5x-large {
+  font-size: var(--g-font-size--4x-large);
+}
+
+@media only screen and (min-width: 40rem) {
+.c-heading {
+  font-size: var(--g-font-size--base);
+}
+
+.c-heading--large {
+  font-size: var(--g-font-size--large);
+}
+
+.c-heading--x-large {
+  font-size: var(--g-font-size--x-large);
+}
+
+.c-heading--2x-large {
+  font-size: var(--g-font-size--2x-large);
+}
+
+.c-heading--3x-large {
+  font-size: var(--g-font-size--3x-large);
+}
+
+.c-heading--4x-large {
+  font-size: var(--g-font-size--4x-large);
+}
+
+.c-heading--5x-large {
+  font-size: var(--g-font-size--5x-large);
+}
+}
+
+.c-heading--color-primary {
+  color: var(--g-color--primary);
+}
+
+.c-heading--color-white {
+  color: var(--g-color--white);
+}
+
+.c-heading--color-black {
+  color: var(--g-color--black);
+}
+</style>
+
+<Tag class={cx("c-heading", {
+  [`c-heading--${size}`]: size,
+  [`c-heading--color-${color}`]: color,
+})}>
+  {text || <slot />}
+</Tag>
